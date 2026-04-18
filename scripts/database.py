@@ -1,3 +1,4 @@
+import bcrypt
 from sqlalchemy import create_engine # Cria o Banco de Dados
 from sqlalchemy import Column, Integer, String, Boolean # Importando bibliotecas para o DB
 from sqlalchemy.orm import sessionmaker, declarative_base # sessionmaker cria as sessões do DB e declarative_base cria as tabelas

@@ -2,10 +2,10 @@
 
 login:
 	@echo "Ainda em Construção"
-	@python3 scripts/login.py
+	@uv run python scripts/login.py
 create:
 	@echo "Abrindo menu de criação"
-	@python3 scripts/create.py
+	@uv run python scripts/create.py
 
 read:
 	@echo "Lendo Banco de Dados..."
@@ -13,4 +13,4 @@ read:
 
 delete:
 	@echo "Ainda em Construção"
-	@python3 scripts/delete.py
+	@uv run python scripts/delete.py
