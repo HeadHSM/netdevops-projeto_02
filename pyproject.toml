@@ -1,0 +1,10 @@
+[project]
+name = "netdevops-projeto-02"
+version = "0.1.0"
+description = "Segundo Projeto NetDevOps. Agora utilizando Python e UV"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "psycopg2-binary>=2.9.11",
+    "sqlalchemy>=2.0.49",
+]
