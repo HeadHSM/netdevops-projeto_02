@@ -1,4 +1,4 @@
-from scripts.database import Usuario, session
+from database import Usuario, session
 
 
 list_usuarios = session.query(Usuario).all()

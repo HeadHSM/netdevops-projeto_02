@@ -1,4 +1,4 @@
-from scripts.database import Usuario, session
+from database import Usuario, session
 
 nome = input("Digite o seu nome: ")
 email = input("Digite o email: ")

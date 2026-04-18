@@ -1,4 +1,4 @@
-from scripts.database import Usuario, session
+from database import Usuario, session
 
 nome = input("Digite o nome para deletar: ")
 deletar_usuario = session.query(Usuario).filter_by(nome=nome).first()
