@@ -1,0 +1,17 @@
+---
+- name: PLAYBOOK DE CONFIGURAÇÂO INICIAL P/ NGINX
+  hosts: servidores
+  become: true # Para comandos root, o become: true é necessário
+  tasks:
+    - name: REALIZAR PING COM SERVIDOR
+      ansible.builtin.ping: # Para utilizar o Ansible-lint, ele recomando o nome completo do módulo
+
+    - name: ATUALIZAR CACHE DO GERENCIADOR DE PACOTES
+      ansible.builtin.apt: # Para utilizar o Ansible-lint, ele recomando o nome completo do módulo
+        update_cache: true
+
+    - name: INSTALAR O NGINX
+      ansible.builtin.apt: # Para utilizar o Ansible-lint, ele recomando o nome completo do módulo
+        name:
+          - nginx
+        state: present

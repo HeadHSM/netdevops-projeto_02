@@ -1,16 +1,9 @@
-.PHONY: login create delete read
+.PHONY: menu ansible
 
-login:
-	@echo "Ainda em Construção"
-	@uv run python scripts/login.py
-create:
-	@echo "Abrindo menu de criação"
-	@uv run python scripts/create.py
+menu:
+	@echo "Iniciando Menu Principal"
+	@uv run python3 main.py
 
-read:
-	@echo "Lendo Banco de Dados..."
-	@uv run python scripts/ler.py
-
-delete:
-	@echo "Ainda em Construção"
-	@uv run python scripts/delete.py
+ansible:
+	@echo "Iniciando Ansible"
+	@uv run ansible-playbook -i inventory.py playbook.yml -K

@@ -5,7 +5,14 @@ description = "Segundo Projeto NetDevOps. Agora utilizando Python e UV"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "ansible>=13.5.0",
+    "ansible-core>=2.20.4",
+    "ansible-dev-tools>=26.4.4",
+    "ansible-lint>=26.4.0",
     "bcrypt>=5.0.0",
+    "beartype>=0.22.9",
     "psycopg2-binary>=2.9.11",
+    "rich>=15.0.0",
     "sqlalchemy>=2.0.49",
+    "typer>=0.24.1",
 ]
