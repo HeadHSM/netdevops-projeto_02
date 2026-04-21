@@ -36,10 +36,11 @@ Tenho ciência de que o arquivo `inventory.py` não está completamente automati
 
 ### Pré-requisitos
 
-    Python 3.12+
+```text
+Python 3.12+
 
-
-    UV instalado
+UV instalado
+```
 
 ### Comandos Rápidos
 
