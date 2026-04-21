@@ -46,19 +46,19 @@ Tenho ciência de que o arquivo `inventory.py` não está completamente automati
 Instalar dependências:
 
 ```bash
-    uv sync
+uv sync
 ```
 
 Abrir o Menu de Gestão:
 
 ```bash
-    make menu
+make menu
 ```
 
 Rodar a Automação:
 
 ```bash
-    make ansible
+make ansible
 ```
 
 ---
