@@ -15,6 +15,7 @@ venv/
 
 # --- Ansible ---
 *.retry
+.ansible
 
 # --- IDE ---
 .vscode/

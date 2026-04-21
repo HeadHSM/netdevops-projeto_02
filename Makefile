@@ -2,7 +2,7 @@
 
 menu:
 	@echo "Iniciando Menu Principal"
-	@uv run python3 main.py
+	@uv run main.py
 
 ansible:
 	@echo "Iniciando Ansible"

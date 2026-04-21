@@ -1,7 +1,6 @@
 from database import Servidor, Dispositivo, session_dispositivos, session_servidores
 import os, sys, time
 
-
 def construcao_timer(segundos):
     for i in range(segundos, 0, -1):
         sys.stdout.write(f"\r--- EM CONSTRUÇÂO --- Retornando em {i}")
