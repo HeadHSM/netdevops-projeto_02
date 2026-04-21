@@ -1,3 +1,6 @@
+> [!TIP]
+> **Este repositório é um Mirror.** O desenvolvimento principal e a "Soberania do Código" ocorrem no [Codeberg](https://codeberg.org/HeadHSM/netdevops-projeto_01).
+
 # NetDevOps Projeto 02
 
 Este projeto automatiza a gestão de inventários para Ansible a partir de bancos de dados SQLite.
