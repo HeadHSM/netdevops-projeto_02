@@ -1,5 +1,6 @@
 from database import Servidor, Dispositivo, session_dispositivos, session_servidores
 import os
+from rich.console import Console
 
 def registro_dispositivos():
     print("--- REGISTRAR DISPOSITIVOS ---")
@@ -40,22 +41,24 @@ def registrar_servidores():
     session_servidores.commit()
 
 def regitros():
+    console = Console()
+
     while True:
-        os.system("clear")
+        console.clear()
         print("--- REGISTRAR (DISPOSITIVOS/SERVIDORES) ---")
         print("1. Registrar Dispositivos")
         print("2. Registrar Servidores")
-        print("3. Voltar ao Menu")
+        print("3. Sair")
         opcao = input("Escolha [1-3]: ")
 
         if opcao == "1":
-            os.system("clear")
+            console.clear()
             registro_dispositivos()
         elif opcao == "2":
-            os.system("clear")
+            console.clear()
             registrar_servidores()
         elif opcao == "3":
-            os.system("clear")
+            console.clear()
             break
         else:
             print("Comando incorreto. Selecione [1-3]")

@@ -1,37 +1,33 @@
-import registro, verificacao, atualizar, remover
-import os
+import create, read, update, delete
+import typer
 
-def main():
-    while True:
-        os.system("clear")
-        print("--- MENU PRINCIPAL ---")
-        print("1. Registrar (Dispositivos/Servidores)")
-        print("2. Verificar (Dispositivos/Servidores)")
-        print("3. Editar (Dispositivos/Servidores)")
-        print("4. Remover (Dispositivos/Servidores)")
-        print("5. Sair")
-        opcao = input("Escolha [1-5]: ")
+app = typer.Typer(help="CLI para Gestão de Disposiivos", rich_markup_mode="rich")
 
-        if opcao == "1":
-            os.system("clear")
-            registro.main()
-        elif opcao == "2":
-            os.system("clear")
-            verificacao.main()
-        elif opcao == "3":
-            os.system("clear")
-            print("--- EM CONSTRUÇÂO ---")
-            atualizar.main()
-        elif opcao == "4":
-            os.system("clear")
-            print("--- EM CONSTRUÇÂO ---")
-            remover.main()
-        elif opcao == "5":
-            print("--- SAINDO... ---")
-            break
-        else:
-            print("Comando incorreto. Selecione [1-5]")
-            input("Pressione qualquer tecla para voltar...")
+@app.command()
+def registrar():
+    """[green]Cadastra[/green] novos Servidores ou Dispositivos no banco."""
+    create.main()
+
+@app.command()
+def verificar():
+    """
+    Lista e consulta os ativos cadastrados (visualização em tabelas).
+    """
+    read.main()
+
+@app.command()
+def remover():
+    """
+    Remove um ativo do inventário baseado no nome ou ID.
+    """
+    delete.main()
+
+@app.command()
+def atualizar():
+    """
+    Modifica informações de ativos existentes (IP, Usuário, Status).
+    """
+    update.main()
 
 if __name__ == "__main__":
-    main()
+    app()

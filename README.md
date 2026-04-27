@@ -1,11 +1,11 @@
 > [!TIP]
 > **Este repositório é um Mirror.** O desenvolvimento principal e a "Soberania do Código" ocorrem no [Codeberg](https://codeberg.org/HeadHSM/netdevops-projeto_01).
 
-# 🚀 NetDevOps Projeto 02 [WIP]
+# NetDevOps Projeto 02 [WIP]
 
 Sistema de gerenciamento de inventário para Ansible, focado em automatizar a administração de ativos de rede e servidores via banco de dados SQLite.
 
-## 🛠️ Funcionalidades
+## Funcionalidades
 
 O projeto substitui o inventário estático do Ansible por uma solução dinâmica, centralizada e fácil de gerenciar:
 
@@ -15,7 +15,7 @@ Tenho ciência de que o arquivo `inventory.py` não está completamente automati
 2.  **Inventário Dinâmico**: O script `inventory.py` converte os dados do SQLite em JSON para o Ansible em tempo real.
 3.  **Ambiente Moderno**: Gerenciamento de dependências ultra-rápido com **UV** e interface visual com **Rich & Typer**.
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 .
@@ -32,34 +32,28 @@ Tenho ciência de que o arquivo `inventory.py` não está completamente automati
 └── pyproject.toml    # Dependências e metadados (UV)
 ```
 
-## 🚀 Como Utilizar
+## Utilização
 
 ### Pré-requisitos
 
-```text
-Python 3.12+
+Para rodar este projeto, você precisará de:
 
-UV instalado
-```
+- **Python 3.12+**
+- **[UV](https://github.com/astral-sh/uv)** (Gerenciador de pacotes e ambientes)
+- **Ansible Core** (Instalado automaticamente via UV)
 
 ### Comandos Rápidos
 
-Instalar dependências:
+O projeto utiliza um `Makefile` para simplificar a execução de tarefas comuns:
 
-```bash
-uv sync
-```
-
-Abrir o Menu de Gestão:
-
-```bash
-make menu
-```
-
-Rodar a Automação:
-
-```bash
-make ansible
-```
+| Comando          | Descrição                                   |
+| :--------------- | :------------------------------------------ |
+| `make registrar` | Inicia o fluxo de cadastro de novos ativos  |
+| `make verificar` | Lista os dispositivos e servidores no banco |
+| `make atualizar` | Abre o menu de edição de dados              |
+| `make remover`   | Inicia o processo de exclusão de ativos     |
+| `make ansible`   | Executa o playbook com inventário dinâmico  |
+| `make ajuda`     | Exibe os detalhes de uso da CLI             |
+| `make sync`      | Sincroniza e instala as dependências com UV |
 
 ---

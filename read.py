@@ -1,5 +1,7 @@
 from database import Servidor, Dispositivo, session_dispositivos, session_servidores
 import os
+import typer
+from rich.console import Console
 
 def verificar_dispositivos():
     buscar_disp = session_dispositivos.query(Dispositivo).all()
@@ -20,26 +22,29 @@ def verificar_servidores():
     input("Aperte qualquer tecla para sair...")
 
 def verificacao():
+    console = Console()
+
     while True:
-        os.system("clear")
+        console.clear()
         print("--- VERIFICAR (DISPOSITIVOS/SERVIDORES) ---")
         print("1. Verificar Dispositivos")
         print("2. Verificar Servidores")
-        print("3. Voltar ao Menu")
+        print("3. Sair")
         opcao = input("Escolha [1-3]: ")
 
-        if opcao == "1":
-            os.system("clear")
-            verificar_dispositivos()
-        elif opcao == "2":
-            os.system("clear")
-            verificar_servidores()
-        elif opcao == "3":
-            os.system("clear")
-            break
-        else:
-            print("Comando incorreto. Selecione [1-3]")
-            input("Pressione qualquer tecla para voltar...")
+        match opcao:
+            case "1":
+                console.clear()
+                verificar_dispositivos()
+            case "2":
+                console.clear()
+                verificar_servidores()
+            case "3":
+                console.clear()
+                break
+            case _: # como se fosse o default da Linguagem C/C++ ou então o else
+                print("Comando incorreto. Selecione [1-3]")
+                input("Pressione qualquer tecla para voltar...")
 
 def main():
     verificacao()
