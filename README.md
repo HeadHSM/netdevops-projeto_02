@@ -18,18 +18,18 @@ Tenho ciência de que o arquivo `inventory.py` não está completamente automati
 ## Estrutura do Projeto
 
 ```text
-.
-├── atualizar.py      # Lógica de alteração de dados existentes
-├── database.py       # Modelagem SQLAlchemy e conexão SQLite
-├── inventory.py      # Script de inventário dinâmico para Ansible
-├── main.py           # Menu principal e orquestração (Typer/Rich)
-├── Makefile          # Atalhos para comandos (make menu, make ansible)
-├── registro.py       # Lógica de inserção de novos ativos
-├── remover.py        # Lógica de exclusão de ativos
-├── verificacao.py    # Listagem e consulta de dados
-├── playbook.yml      # Automação de tarefas (Provisionamento)
-├── ansible.cfg       # Configuração do ambiente Ansible
-└── pyproject.toml    # Dependências e metadados (UV)
+├── scripts/            # Lógica modular do CRUD (chamados pelo main.py)
+│   ├── criar.py        # Lógica de inserção de novos ativos
+│   ├── ler.py          # Listagem e consulta de dados
+│   ├── atualizar.py    # Lógica de alteração de dados existentes
+│   └── remover.py      # Lógica de exclusão de ativos
+├── database.py         # Modelagem SQLAlchemy e conexão SQLite
+├── inventory.py        # Script de inventário dinâmico para Ansible
+├── main.py             # Menu principal e orquestração (Typer/Rich)
+├── Makefile            # Atalhos para comandos (make menu, make ansible)
+├── playbook.yml        # Automação de tarefas (Provisionamento)
+├── ansible.cfg         # Configuração do ambiente Ansible
+└── pyproject.toml      # Dependências e metadados (UV)
 ```
 
 ## Utilização
@@ -48,8 +48,8 @@ O projeto utiliza um `Makefile` para simplificar a execução de tarefas comuns:
 
 | Comando          | Descrição                                   |
 | :--------------- | :------------------------------------------ |
-| `make registrar` | Inicia o fluxo de cadastro de novos ativos  |
-| `make verificar` | Lista os dispositivos e servidores no banco |
+| `make criar`     | Inicia o fluxo de cadastro de novos ativos  |
+| `make ler`       | Lista os dispositivos e servidores no banco |
 | `make atualizar` | Abre o menu de edição de dados              |
 | `make remover`   | Inicia o processo de exclusão de ativos     |
 | `make ansible`   | Executa o playbook com inventário dinâmico  |

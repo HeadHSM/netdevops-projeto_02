@@ -1,5 +1,4 @@
 from database import Servidor, Dispositivo, session_dispositivos, session_servidores
-import os
 from rich.console import Console
 
 def registro_dispositivos():
@@ -49,20 +48,21 @@ def regitros():
         print("1. Registrar Dispositivos")
         print("2. Registrar Servidores")
         print("3. Sair")
-        opcao = input("Escolha [1-3]: ")
+        opcao = input("Escolha [1-3 ou Dispositivos/Servidores/Sair]: ")
 
-        if opcao == "1":
-            console.clear()
-            registro_dispositivos()
-        elif opcao == "2":
-            console.clear()
-            registrar_servidores()
-        elif opcao == "3":
-            console.clear()
-            break
-        else:
-            print("Comando incorreto. Selecione [1-3]")
-            input("Pressione qualquer tecla para voltar...")
+        match opcao.lower().strip():
+            case "1" | "dispositivos":
+                console.clear()
+                registro_dispositivos()
+            case "2" | "servidores": 
+                console.clear()
+                registrar_servidores()
+            case "3" | "sair":
+                console.clear()
+                break
+            case _:
+                print("Comando incorreto. [1-3 ou Dispositivos/Servidores/Sair]")
+                input("Pressione qualquer tecla para voltar...")
 
 def main():
     regitros()
