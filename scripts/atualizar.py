@@ -125,8 +125,8 @@ def update():
                 console.clear()
                 break
             case _:
-                console.print("Comando incorreto. [1-3 ou Dispositivos/Servidores/Sair]")
-                input("Pressione qualquer tecla para voltar...")
+                console.print("[bold red]Comando incorreto. Escolha [1-3 ou Dispositivos/Servidores/Sair][/bold red]")
+                input("Pressione qualquer tecla para tentar novamente...")
 
 def main():
     update()

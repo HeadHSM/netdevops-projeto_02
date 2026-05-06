@@ -54,8 +54,7 @@ def verificacao():
             case "3" | "sair": 
                 break
             case _:
-                # Trocado para console.print para seguir o padrão
-                console.print("[bold red]Comando incorreto.[/bold red]")
+                console.print("[bold red]Comando incorreto. Escolha [1-3 ou Dispositivos/Servidores/Sair][/bold red]")
                 input("Pressione qualquer tecla para tentar novamente...")
 
 def main():
